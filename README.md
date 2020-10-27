@@ -1,5 +1,5 @@
 # MyAnimeList_WebCrawler
-A spider that crawls all of the anime in MyAnimeList.net 
+A spider that crawls all of the anime in MyAnimeList.net Using SCRAPY
 
 The spider grabs the anime data into columns: 
 Title
