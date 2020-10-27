@@ -1,0 +1,32 @@
+
+start url = https://myanimelist.net/topanime.php?limit=0   # ?limit=0
+
+
+
+# anime 
+
+
+get url = response.xpath("//div/div/h3/a/@href").get()
+
+#anime description
+title = response.xpath("//div/h1/strong/text()").get()
+type = response.xpath('//td[has-class("borderClass")]/div/div[9]/a/text()').get()
+episodes = response.xpath('//td[has-class("borderClass")]/div/div[10]/text()')[1].extract().strip()
+status = response.xpath('//td[has-class("borderClass")]/div/div[11]/text()')[1].get().strip()
+aired = response.xpath('//td[has-class("borderClass")]/div/div[12]/text()')[1].get().strip()
+premiered = response.xpath('//td[has-class("borderClass")]/div/div[13]/a/text()').get()
+broadcast = response.xpath('//td[has-class("borderClass")]/div/div[14]/text()')[1].get().strip()
+producers = response.xpath('//td[has-class("borderClass")]/div/div[15]/a/text()').getall()
+
+
+
+
+
+
+
+# get next page
+
+?limit=100
+
+next-page = response.xpath("//div/a[@class = 'link-blue-box next']/@href").get()
+
